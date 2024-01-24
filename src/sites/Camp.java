@@ -1,5 +1,6 @@
 package sites;
 
+import personnages.GRADE;
 import personnages.Soldat;
 
 public class Camp {
@@ -38,5 +39,10 @@ public class Camp {
 		System.out.println(affichageCamp);
 	}
 	
+	public void changerCommandant(Soldat soldat) {
+		if(soldat.grade == GRADE.CENTURION) {
+			
+		}
+	}
 	
 }
