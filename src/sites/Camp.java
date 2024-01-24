@@ -1,0 +1,42 @@
+package sites;
+
+import personnages.Soldat;
+
+public class Camp {
+	Soldat commandant;
+	Soldat[] soldats = new Soldat[3];
+	
+	
+	public Camp(Soldat commandant) {
+		this.commandant = commandant;
+		commandant.parler("Je suis en charge de créer un nouveau camp romain.");
+	}
+	
+	public Soldat getCommandant() {
+		return commandant;
+	}
+	
+	public boolean ajouterSoldat(Soldat soldat) {
+		for (int i=0; i< soldats.length; i++) {
+			if (soldats[i] == null) {
+				soldat.parler(" Je mets mon épée au service de Rome dans le camp dirigé par " + commandant.getNom());
+				soldats[i] = soldat;
+				return true;
+			}
+		}
+		commandant.parler("Désolé " + soldat.getNom() + " notre camp est complet !");
+		return false;
+	}
+	
+	public void afficherCamp() {
+		String affichageCamp = "Le camp dirigé par " + commandant.getNom() + " contient les soldats : \n";
+		for (int i=0; i<soldats.length;i++) {
+			if(soldats[i]!=null) {
+				affichageCamp += "- " + soldats[i].getNom() + "\n"; 
+			}
+		}
+		System.out.println(affichageCamp);
+	}
+	
+	
+}

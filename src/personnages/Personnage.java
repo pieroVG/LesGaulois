@@ -15,7 +15,7 @@ abstract class Personnage {
 	}
 	
 	public void parler(String texte) {
-		System.out.println("Le " + donnerAuteur() + nom + " :\"" + texte +"\"" );
+		System.out.println("Le " + donnerAuteur() + nom + " : \"" + texte +"\"" );
 	}
 	
 	protected abstract String donnerAuteur();

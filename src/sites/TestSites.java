@@ -1,0 +1,46 @@
+package sites;
+
+import personnages.GRADE;
+import personnages.Gaulois;
+import personnages.Soldat;
+
+public class TestSites {
+	public static void main(String[] args) {
+		// Question b
+		Gaulois vercingetorix = new Gaulois("Versingétorix",5);
+		Soldat minus = new Soldat("Minus", GRADE.CENTURION,2);
+		
+		Village village = new Village(vercingetorix);
+		Camp camp = new Camp(minus);
+		
+		
+		// Question d
+		Gaulois agecanonix = new Gaulois("Agecanonix",1);
+		Gaulois assurancetourix = new Gaulois("Assurancetourix",2);
+		Gaulois asterix = new Gaulois("Astérix",5);
+		Gaulois obelix = new Gaulois("Obelix",15);
+		Gaulois prolix = new Gaulois("Prolix",2);
+		
+		Soldat brutus = new Soldat("Brutus",GRADE.CENTURION,5);
+		Soldat milexcus = new Soldat("Milexcus",GRADE.SOLDAT,2);
+		Soldat tullius = new Soldat("Tullius Octopus",GRADE.TESSERARIUS,2);
+		Soldat ballondebaudrus = new Soldat("Ballondebaudrus",GRADE.OPTIO,3);
+		
+		camp.ajouterSoldat(brutus);
+		camp.ajouterSoldat(milexcus);
+		camp.ajouterSoldat(tullius);
+		camp.ajouterSoldat(ballondebaudrus);
+		
+		village.ajouterVillageois(agecanonix);
+		village.ajouterVillageois(assurancetourix);
+		village.ajouterVillageois(asterix);
+		village.ajouterVillageois(obelix);
+		village.ajouterVillageois(prolix);
+		
+		
+		// Question e
+		village.afficherVillageois();
+		camp.afficherCamp();
+		
+	}
+}
