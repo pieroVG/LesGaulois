@@ -42,5 +42,14 @@ public class TestSites {
 		village.afficherVillageois();
 		camp.afficherCamp();
 		
+		
+		// Question f
+		Gaulois abraracourcix = new Gaulois("Abraracourcix",5);
+		village.changerChef(abraracourcix);
+		
+		Soldat briseradius = new Soldat("Briseradius",GRADE.SOLDAT,4);
+		Soldat chorus = new Soldat("Chorus",GRADE.CENTURION,5);
+		camp.changerCommandant(briseradius);
+		camp.changerCommandant(chorus);
 	}
 }

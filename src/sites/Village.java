@@ -1,6 +1,8 @@
 package sites;
 
+import personnages.GRADE;
 import personnages.Gaulois;
+import personnages.Soldat;
 
 public class Village {
 	Gaulois chef;
@@ -36,6 +38,13 @@ public class Village {
 		}
 		System.out.println(affichageVillage);
 	}
+	
+	public void changerChef(Gaulois gaulois) {
+			chef.parler("Je laisse mon grand bouclier au grand " + gaulois.getNom() );
+			chef = gaulois;
+			chef.parler("Merci !");
+	}
+	
 	
 	
 
