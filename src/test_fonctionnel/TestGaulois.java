@@ -35,7 +35,7 @@ public class TestGaulois {
 			minus.recevoirCoup(3);
 		}*/
 		
-		for (int i = 0; i<3; i++) {
+		for (int i = 0; i<4; i++) {
 			asterix.frapper(minus);
 			minus.frapper(asterix);
 		}
