@@ -1,6 +1,6 @@
 package personnages;
 
-public enum GRADE {
+public enum Grade {
 	SOLDAT, 
 	TESSERARIUS, 
 	OPTIO,

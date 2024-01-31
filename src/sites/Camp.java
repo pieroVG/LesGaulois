@@ -1,6 +1,6 @@
 package sites;
 
-import personnages.GRADE;
+import personnages.Grade;
 import personnages.Soldat;
 
 public class Camp {
@@ -40,7 +40,7 @@ public class Camp {
 	}
 	
 	public void changerCommandant(Soldat soldat) {
-		if(soldat.grade == GRADE.CENTURION) {
+		if(soldat.grade == Grade.CENTURION) {
 			commandant = soldat;
 			commandant.parler("Moi "+ commandant.getNom() + " je prends la direction du camp romain.");
 		}

@@ -1,9 +1,9 @@
 package personnages;
 
 public class Soldat extends Romain {
-	public GRADE grade;
+	public Grade grade;
 	
-	public Soldat(String nom,  GRADE grade, int force) {
+	public Soldat(String nom,  Grade grade, int force) {
 		super(nom, force);
 		this.grade = grade;
 	}

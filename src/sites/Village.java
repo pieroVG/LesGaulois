@@ -1,6 +1,6 @@
 package sites;
 
-import personnages.GRADE;
+import personnages.Grade;
 import personnages.Gaulois;
 import personnages.Soldat;
 
