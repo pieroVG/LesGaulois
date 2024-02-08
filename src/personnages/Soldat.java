@@ -3,7 +3,6 @@ package personnages;
 public class Soldat extends Romain {
 	public Grade grade;
 	public Armure[] armure = new Armure[3];
-	private int defense = force;
 	
 	@Override
 	protected String donnerAuteur() {
@@ -51,8 +50,7 @@ public class Soldat extends Romain {
 
 	    for (int i = 0; i < armure.length; i++) {
 	        if (armure[i] == null) {
-	            armure[i] = equipement;
-	            defense = defense + armure[i].getForce();
+	            armure[i] = equipement;   
 	            System.out.println("Le " + donnerAuteur() + " " + nom + " s'équipe avec un " + equipement.getNom() + ".");
 	            return;
 	        }
