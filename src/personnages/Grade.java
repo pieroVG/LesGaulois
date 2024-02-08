@@ -1,8 +1,18 @@
 package personnages;
 
 public enum Grade {
-	SOLDAT, 
-	TESSERARIUS, 
-	OPTIO,
-	CENTURION,
+    SOLDAT("soldat"),
+    TESSERARIUS("tesserarius"),
+    OPTIO("optio"),
+    CENTURION("centurion");
+
+    private String nom;
+
+    private Grade(String nom) {
+        this.nom = nom;
+    }
+
+    public String getNom() {
+        return nom;
+    }
 }
