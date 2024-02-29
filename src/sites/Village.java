@@ -5,8 +5,8 @@ import personnages.Gaulois;
 import personnages.Soldat;
 
 public class Village {
-	Gaulois chef;
-	Gaulois[] villageois = new Gaulois[4];
+	private Gaulois chef;
+	private Gaulois[] villageois = new Gaulois[4];
 	
 	public Village(Gaulois chef) {
 		this.chef = chef;

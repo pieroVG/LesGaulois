@@ -1,9 +1,9 @@
 package batailles;
 
 public interface Bataille {
-	public void decrireContexte();
-	public void choisirCombattants();
-	public void preparerCombat();
-	public void decrireCombat();
-	public void donnerResultat();
+	public String decrireContexte();
+	public String choisirCombattants();
+	public String preparerCombat();
+	public String decrireCombat();
+	public String donnerResultat();
 }

@@ -4,8 +4,8 @@ import personnages.Grade;
 import personnages.Soldat;
 
 public class Camp {
-	Soldat commandant;
-	Soldat[] soldats = new Soldat[3];
+	private Soldat commandant;
+	private Soldat[] soldats = new Soldat[3];
 	
 	
 	public Camp(Soldat commandant) {
