@@ -1,8 +1,8 @@
 package sites;
 
-import personnages.Grade;
+import java.util.Random;
+
 import personnages.Gaulois;
-import personnages.Soldat;
 
 public class Village {
 	private Gaulois chef;
@@ -45,6 +45,12 @@ public class Village {
 			chef.parler("Merci !");
 	}
 	
+	public Gaulois randomVillageois() {
+		Random rand = new Random();
+		int randomNum = rand.nextInt(villageois.length + 1);
+		
+		return villageois[randomNum];
+	}
 	
 	
 

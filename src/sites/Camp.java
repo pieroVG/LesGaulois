@@ -1,5 +1,8 @@
 package sites;
 
+import java.util.Random;
+
+import personnages.Gaulois;
 import personnages.Grade;
 import personnages.Soldat;
 
@@ -47,6 +50,15 @@ public class Camp {
 		else {
 			soldat.parler("Je ne suis pas suffisamment gradé pour prendre la direction du camp romain.");
 		}
+	}
+	
+	
+	public Soldat randomSoldat() {
+		Random rand = new Random();
+		int randomNum = rand.nextInt(soldats.length + 1);
+		
+		
+		return soldats[randomNum];
 	}
 	
 }
