@@ -29,11 +29,11 @@ public class Embuscade implements Bataille {
 
 		selectionGaulois(village);
 		
-		sb.append("Il s'agit de ");
-		afficherGaulois();
+		sb.append("Il s'agit de " + afficherGaulois());
+		sb.append("\n");
 		
 		selectionSoldats(camp);
-		sb.append("\n Mais cachés derrière des bosquets se cachent " + soldats[1].getNom() + " " + soldats[2].getNom() + ".");
+		sb.append("Mais cachés derrière des bosquets se cachent " + soldats[0].getNom() + " et " + soldats[1].getNom() + ".");
 		
 		return sb.toString();
 	}
@@ -57,28 +57,48 @@ public class Embuscade implements Bataille {
 	}
 	
 	private void selectionGaulois(Village village) {
-		for (int i=0; i< gaulois.length; i++) {
-			Gaulois g = village.randomVillageois();
-			if ( gaulois[i] != g ) {
-				gaulois[i] = g ;
-			}
-			else {
-				i--;
-			}
-		}
+	    for (int i = 0; i < gaulois.length; i++) {
+	        Gaulois g;
+	        do {
+	            g = village.randomVillageois();
+	        } while (estGauloisDejaSelectionne(g, i) || g == null); 
+	        gaulois[i] = g;
+	    }
+	}
+
+	private boolean estGauloisDejaSelectionne(Gaulois gaulois, int index) {
+	    for (int j = 0; j < index; j++) {
+	        if (this.gaulois[j] == gaulois) {
+	            return true;
+	        }
+	    }
+	    return false;
 	}
 	
+	
+	
+	
 	private void selectionSoldats(Camp camp) {
-		for (int i=0; i< gaulois.length; i++) {
-			Soldat s = camp.randomSoldat();
-			if ( soldats[i] != s ) {
-				soldats[i] = s ;
-			}
-			else {
-				i--;
-			}
-		}
+	    for (int i = 0; i < soldats.length; i++) {
+	        Soldat s;
+	        do {
+	            s = camp.randomSoldat();
+	        } while (estSoldatDejaSelectionne(s, i));
+	        soldats[i] = s;
+	    }
 	}
+
+	private boolean estSoldatDejaSelectionne(Soldat soldat, int index) {
+	    for (int j = 0; j < index; j++) {
+	        if (soldats[j] == soldat) {
+	            return true;
+	        }
+	    }
+	    return false;
+	}
+	
+	
+	
 	
 	private String afficherGaulois() {
         StringBuilder sb = new StringBuilder();

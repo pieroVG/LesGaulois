@@ -8,7 +8,7 @@ import personnages.Soldat;
 
 public class Camp {
 	private Soldat commandant;
-	private Soldat[] soldats = new Soldat[3];
+	private Soldat[] soldats = new Soldat[10];
 	
 	
 	public Camp(Soldat commandant) {

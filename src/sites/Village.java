@@ -6,7 +6,7 @@ import personnages.Gaulois;
 
 public class Village {
 	private Gaulois chef;
-	private Gaulois[] villageois = new Gaulois[4];
+	private Gaulois[] villageois = new Gaulois[10];
 	
 	public Village(Gaulois chef) {
 		this.chef = chef;
@@ -47,7 +47,7 @@ public class Village {
 	
 	public Gaulois randomVillageois() {
 		Random rand = new Random();
-		int randomNum = rand.nextInt(villageois.length + 1);
+		int randomNum = rand.nextInt(villageois.length);
 		
 		return villageois[randomNum];
 	}
