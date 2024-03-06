@@ -46,9 +46,10 @@ public class TestBataille {
 		camp.ajouterSoldat(quintilius);
 		
 		Conteur goscinny = new Conteur("Goscinny");
-		Embuscade embuscade = new Embuscade();
+		Embuscade embuscade = new Embuscade(village, camp);
 		
 		goscinny.conter(embuscade,"Je vais vous conter une histoire qui se déroule en 50 avant Jésus-Christ, du temps où la Gaule est occupée par les Romains.");
+		
 		
 	}
 

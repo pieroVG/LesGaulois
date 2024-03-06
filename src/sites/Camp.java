@@ -54,11 +54,13 @@ public class Camp {
 	
 	
 	public Soldat randomSoldat() {
-		Random rand = new Random();
-		int randomNum = rand.nextInt(soldats.length + 1);
-		
-		
-		return soldats[randomNum];
+	    Random rand = new Random();
+	    Soldat soldat = null;
+	    while (soldat == null || soldat.grade != Grade.SOLDAT) {
+	        int randomNum = rand.nextInt(soldats.length);
+	        soldat = soldats[randomNum];
+	    }
+	    return soldat;
 	}
 	
 }

@@ -2,12 +2,20 @@ package batailles;
 
 import personnages.Gaulois;
 import personnages.Soldat;
+import sites.Camp;
 import sites.Village;
 
 public class Embuscade implements Bataille {
 	private Gaulois[] gaulois = new Gaulois[4];
 	private Soldat[] soldats = new Soldat[2];
+	private Village village;
+	private Camp camp;
 	
+	
+	public Embuscade(Village village, Camp camp) {
+        this.village = village;
+        this.camp = camp;
+    }
 	
 	@Override
 	public String decrireContexte() {
@@ -17,8 +25,17 @@ public class Embuscade implements Bataille {
 
 	@Override
 	public String choisirCombattants() {
+		StringBuilder sb = new StringBuilder();
+
+		selectionGaulois(village);
 		
-		return "choisirCombattants";
+		sb.append("Il s'agit de ");
+		afficherGaulois();
+		
+		selectionSoldats(camp);
+		sb.append("\n Mais cachés derrière des bosquets se cachent " + soldats[1].getNom() + " " + soldats[2].getNom() + ".");
+		
+		return sb.toString();
 	}
 
 	@Override
@@ -50,6 +67,32 @@ public class Embuscade implements Bataille {
 			}
 		}
 	}
+	
+	private void selectionSoldats(Camp camp) {
+		for (int i=0; i< gaulois.length; i++) {
+			Soldat s = camp.randomSoldat();
+			if ( soldats[i] != s ) {
+				soldats[i] = s ;
+			}
+			else {
+				i--;
+			}
+		}
+	}
+	
+	private String afficherGaulois() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < gaulois.length; i++) {
+            sb.append(gaulois[i].getNom());
+            if (i < gaulois.length - 2) {
+                sb.append(", ");
+            } else if (i == gaulois.length - 2) {
+                sb.append(" et ");
+            }
+        }
+        sb.append(".");
+        return sb.toString();
+    }
 	
 	
 }
